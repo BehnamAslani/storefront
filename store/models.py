@@ -37,6 +37,7 @@ class Customer(models.Model):
     phone = models.CharField(max_length=255)
     birth_date = models.DateField(null=True)
     membership = models.CharField(max_length=1, choices=MEMBERSHIP_CHOICE, default=MEMBERSHIP_BROONZE)
+
     class Meta:
         db_table = 'store_customers'
         indexes = [
