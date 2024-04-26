@@ -1,0 +1,20 @@
+<ul>
+    
+    {% comment %} {% for product in products %}
+        <li>
+            {{product.title}}
+            price: {{product.unit_price}}<br>
+            {{product.collection.id}}
+            <p> -------------</p>
+        </li>
+    {% endfor %}
+     {% endcomment %}
+    {% for customer in customers %}
+    <li>
+        {{ customer.first_name }}
+    </li>
+        
+    {% endfor %}
+        
+        
+</ul>
