@@ -8,5 +8,5 @@ def say_hello(request):
     # queryset = Customer.objects.filter(email__icontains='.com')
     # queryset = Collection.objects.filter(featured_product__isnull=True)
     # queryset = Product.objects.filter(inventory__lt=10)
-    order = Order.objects.get(pk=1)
-    return render(request, 'hello.html', {'order': order})
+    queryset = Order.objects.filter(customer_id=1)
+    return render(request, 'hello.html', {'orders': queryset})

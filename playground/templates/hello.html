@@ -37,7 +37,15 @@
     {% endfor %}
          {% endcomment %}
 
-    <p> {{ order.placed_at }} </p>
+    {% comment %} <p> {{ order.placed_at }} </p> {% endcomment %}
+
+    
+    {% for order in orders %}
+        <li>
+            {{ order.placed_at }}
+        </li>
+    {% endfor %}
+        
         
         
         
