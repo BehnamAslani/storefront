@@ -18,12 +18,24 @@
     {% endfor %} {% endcomment %}
 
     
-    {% for collection in collections %}
+    {% comment %} {% for collection in collections %}
     <li>
         {{ collection.title }}
     </li>
         
+    {% endfor %} {% endcomment %}
+
+
+    
+    {% for product in products %}
+    <li>
+        {{ product.title }}
+        inventory: {{ product.inventory }}
+        
+    </li>
+    <hr>
     {% endfor %}
+        
         
         
         

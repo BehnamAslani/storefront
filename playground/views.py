@@ -6,5 +6,6 @@ from store.models import Product, Customer, Collection
 def say_hello(request):
     # queryset = Product.objects.filter(last_update__year=2021)
     # queryset = Customer.objects.filter(email__icontains='.com')
-    queryset = Collection.objects.filter(featured_product__isnull=True)
-    return render(request, 'hello.html', {'collections': queryset})
+    # queryset = Collection.objects.filter(featured_product__isnull=True)
+    queryset = Product.objects.filter(inventory__lt=10)
+    return render(request, 'hello.html', {'products': queryset})
