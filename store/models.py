@@ -61,7 +61,7 @@ class Order(models.Model):
 
 class OrderItems(models.Model):
     order = models.ForeignKey(Order, on_delete=models.PROTECT)
-    Product = models.ForeignKey(Product, on_delete=models.PROTECT)
+    product = models.ForeignKey(Product, on_delete=models.PROTECT)
     quantity = models.SmallIntegerField()
     unit_price = models.DecimalField(max_digits=4, decimal_places=2)
     class Meta:
