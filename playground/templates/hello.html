@@ -9,12 +9,22 @@
         </li>
     {% endfor %}
      {% endcomment %}
-    {% for customer in customers %}
+
+    {% comment %} {% for customer in customers %}
     <li>
         {{ customer.first_name }}
     </li>
         
+    {% endfor %} {% endcomment %}
+
+    
+    {% for collection in collections %}
+    <li>
+        {{ collection.title }}
+    </li>
+        
     {% endfor %}
+        
         
         
 </ul>
