@@ -27,6 +27,7 @@
 
 
     
+
     {% comment %} {% for product in products %}
     <li>
         {{ product.title }}
@@ -34,8 +35,8 @@
         
     </li>
     <hr>
-    {% endfor %}
-         {% endcomment %}
+    {% endfor %} {% endcomment %}
+\
 
     {% comment %} <p> {{ order.placed_at }} </p>
 
@@ -47,11 +48,13 @@
     {% endfor %} {% endcomment %}
 
     
-    {% for ordersItem in ordersItems %}
+    {% comment %} {% for ordersItem in ordersItems %}
     <li>
         {{ ordersItem }}
         
-    {% endfor %}
+    {% endfor %} {% endcomment %}
+
+    {{ product.title }}
         
         
         
