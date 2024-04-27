@@ -14,8 +14,9 @@ def say_hello(request):
     # queryset = Product.objects.order_by('unit_price','-title').reverse()
     # product = Product.objects.order_by('unit_price')[0]
     # product = Product.objects.earliest('title')
-    product = Product.objects.latest('unit_price')
+    # product = Product.objects.latest('unit_price')
+    queryset = Product.objects.all()[:5]
     # print(queryset.query)
 
 
-    return render(request, 'hello.html', {'product': product})
+    return render(request, 'hello.html', {'products': queryset})
