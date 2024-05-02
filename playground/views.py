@@ -19,7 +19,11 @@ def say_hello(request):
     # queryset = Product.objects.values_list('title','collection__title') # returns tuple
     # queryset = Product.objects.values('title','collection__title') # returns dict
     # queryset = OrderItems.objects.values_list('product__title').order_by('product__title').distinct() # my slution for (directory 4, video 11) mosh exercise
-    queryset = Product.objects.filter(id__in=OrderItems.objects.values('product_id').distinct()).order_by('title')
+    # queryset = Product.objects.filter(id__in=OrderItems.objects.values('product_id').distinct()).order_by('title')
+
+    # deferring fields
+    # queryset = Product.objects.only('id', 'title') # when we have does not define a field in only and we call it in template , its gonna take long time for call it and bunch of more query for calling it
+    # queryset = Product.objects.defer('description') # if we definde << description >> and we call it << description >> in the tempalete , its gonna take long time for call it and bunch of more query for calling it
     print(queryset.query)
     # print(connection.queries)
 
